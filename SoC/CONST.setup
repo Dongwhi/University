@@ -1,0 +1,33 @@
+##########################################################################################
+# User-defined variables for logical library, RTL setup
+##########################################################################################
+set edkdir    "/home/eda/soc/lib/gpdk/14n/SAED14nm_EDK_06052019"
+set lib_rvt   "${edkdir}/stdcell_rvt/db_nldm"                 ;#Logic cell library directory
+set lib_hvt   "${edkdir}/stdcell_hvt/db_nldm"                 ;#Logic cell library directory
+set lib_lvt   "${edkdir}/stdcell_lvt/db_nldm"                 ;#Logic cell library directory
+set lib_io    "${edkdir}/io_std/SAED14_EDK/lib/io_std/db_nldm"       ;#IO library directory
+set lib_mem   "${edkdir}/sram/lib/sram/logic_synth/single"    ;#Memory library directory
+set lib_pll   "${edkdir}/pll/SAED14_EDK/lib/pll/logic_synth"  ;#PLL library directory
+set RTL_path  "/home/soc02/soc/report2/rtl"                            ;#RTL directory
+
+
+######################################################################
+# Search path Settings
+######################################################################
+set search_path "$search_path . $lib_rvt \
+		$lib_io \
+		$lib_mem \
+		$lib_pll \
+		$RTL_path"
+
+
+##########################################################################################
+# User setup
+##########################################################################################
+#define_design_lib work -path "./work"
+set hdlin_enable_rtldrc_info true
+set hdlin_enable_presto_for_vl true
+
+##########################################################################################
+# Target & Link library setup
+##########################################################################################
